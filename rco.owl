@@ -1,0 +1,177 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://linkn.com.br/onto/rco/"
+     xml:base="http://linkn.com.br/onto/rco/"
+     xmlns:swrc_ext="http://www.cs.vu.nl/~mcaklein/onto/swrc_ext/2005/05#"
+     xmlns:ns="http://www.w3.org/2003/06/sw-vocab-status/ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ns1="http://rdfs.org/sioc/ns#"
+     xmlns:core="http://purl.org/ontology/ao/core#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:doap="http://usefulinc.com/ns/doap#"
+     xmlns:core1="http://purl.org/ontology/cco/core#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:wot="http://xmlns.com/wot/0.1/"
+     xmlns:ontology="http://data.semanticweb.org/ns/swc/ontology#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:misc="http://data.semanticweb.org/ns/misc#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <owl:Ontology rdf:about="http://linkn.com.br/onto/rco/">
+        <owl:imports rdf:resource="http://purl.org/ontology/cco/core#"/>
+        <owl:imports rdf:resource="http://data.semanticweb.org/ns/swc/ontology"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://data.semanticweb.org/ns/swc/ontology#hasRelatedDocument -->
+
+    <rdf:Description rdf:about="http://data.semanticweb.org/ns/swc/ontology#hasRelatedDocument">
+        <rdfs:range rdf:resource="http://swrc.ontoware.org/ontology#Publication"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://data.semanticweb.org/ns/swc/ontology#relatedToEvent -->
+
+    <rdf:Description rdf:about="http://data.semanticweb.org/ns/swc/ontology#relatedToEvent">
+        <rdfs:domain rdf:resource="http://swrc.ontoware.org/ontology#Publication"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://linkn.com.br/onto/rco/authorOf -->
+
+    <owl:ObjectProperty rdf:about="http://linkn.com.br/onto/rco/authorOf">
+        <owl:inverseOf rdf:resource="http://swrc.ontoware.org/ontology#author"/>
+        <rdfs:domain rdf:resource="http://swrc.ontoware.org/ontology#Person"/>
+        <rdfs:range rdf:resource="http://swrc.ontoware.org/ontology#Publication"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://linkn.com.br/onto/rco/hasCompetenceLevel -->
+
+    <owl:ObjectProperty rdf:about="http://linkn.com.br/onto/rco/hasCompetenceLevel">
+        <rdfs:domain rdf:resource="http://swrc.ontoware.org/ontology#Person"/>
+        <rdfs:range rdf:resource="http://linkn.com.br/onto/rco/CompetenceLevel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://linkn.com.br/onto/rco/isLevelOf -->
+
+    <owl:ObjectProperty rdf:about="http://linkn.com.br/onto/rco/isLevelOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://linkn.com.br/onto/rco/CompetenceLevel"/>
+        <rdfs:range rdf:resource="http://linkn.com.br/onto/rco/Competence"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ontology/cco/core#competence -->
+
+    <rdf:Description rdf:about="http://purl.org/ontology/cco/core#competence">
+        <rdfs:domain rdf:resource="http://swrc.ontoware.org/ontology#Person"/>
+        <rdfs:range rdf:resource="http://linkn.com.br/onto/rco/Competence"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.org/ontology/cco/core#skill -->
+
+    <rdf:Description rdf:about="http://purl.org/ontology/cco/core#skill">
+        <rdfs:domain rdf:resource="http://swrc.ontoware.org/ontology#Person"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://swrc.ontoware.org/ontology#author -->
+
+    <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#author">
+        <rdfs:domain rdf:resource="http://swrc.ontoware.org/ontology#Publication"/>
+        <rdfs:range rdf:resource="http://swrc.ontoware.org/ontology#Person"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://linkn.com.br/onto/rco/competenceLevelValue -->
+
+    <owl:DatatypeProperty rdf:about="http://linkn.com.br/onto/rco/competenceLevelValue">
+        <rdfs:domain rdf:resource="http://linkn.com.br/onto/rco/CompetenceLevel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://linkn.com.br/onto/rco/Competence -->
+
+    <owl:Class rdf:about="http://linkn.com.br/onto/rco/Competence">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/cco/core#CognitiveCharacteristic"/>
+        <rdfs:comment xml:lang="en">cognitive skill of a researcher</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://linkn.com.br/onto/rco/CompetenceLevel -->
+
+    <owl:Class rdf:about="http://linkn.com.br/onto/rco/CompetenceLevel">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ontology/cco/core#CharacteristicDynamics"/>
+        <rdfs:comment xml:lang="en">Level of competence of a researcher.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://swrc.ontoware.org/ontology#Person -->
+
+    <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#Person">
+        <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <rdf:Description rdf:about="http://xmlns.com/foaf/0.1/Person"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.5.20160517-0735) https://github.com/owlcs/owlapi -->
+
