@@ -162,6 +162,7 @@
     <!-- http://linkn.com.br/onto/rco/Competence -->
 
     <owl:Class rdf:about="http://linkn.com.br/onto/rco/Competence">
+        <owl:equivalentClass rdf:resource="http://swrc.ontoware.org/ontology#ResearchTopic"/>
         <rdfs:subClassOf rdf:resource="http://purl.org/ontology/cco/core#CognitiveCharacteristic"/>
         <rdfs:comment xml:lang="en">cognitive skill of a researcher</rdfs:comment>
     </owl:Class>
@@ -194,6 +195,12 @@
     <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#Person">
         <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
     </rdf:Description>
+    
+
+
+    <!-- http://swrc.ontoware.org/ontology#ResearchTopic -->
+
+    <rdf:Description rdf:about="http://swrc.ontoware.org/ontology#ResearchTopic"/>
     
 
 
